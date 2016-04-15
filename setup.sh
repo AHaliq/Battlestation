@@ -24,6 +24,8 @@ fc-cache -f -v
 sudo apt-get install zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 chsh -s /usr/bin/zsh
+#install tmux
+sudo apt-get install tmux
 
 sudo reboot
 
