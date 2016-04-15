@@ -26,6 +26,21 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 chsh -s /usr/bin/zsh
 #install tmux
 sudo apt-get install tmux
+#install powerline
+sudo apt-get install python-pip
+pip install --user powerline-status
+pip install --user git+git://github.com/powerline/powerline
+# zsh powerline
+echo "# Powerline Configuration" >> ~/.zshrc
+echo ". ~/.loacl/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh" >> ~/.zshrc
+# vim powerline
+echo '" Powerline configuration' | sudo tee --append /etc/vim/vimrc
+echo "python from powerline.vim import setup as powerline_setup" | sudo tee --append /etc/vim/vimrc
+echo "python powerline_setup()" | sudo tee --append /etc/vim/vimrc
+echo "pythong del powerline_setup" | sudo tee --append /etc/vim/vimrc
+echo "set laststatus=2" | sudo tee --append /etc/vim/vimrc
+echo "set t_Co=256" | sudo tee --append /etc/vim/vimrc
+
 
 sudo reboot
 
