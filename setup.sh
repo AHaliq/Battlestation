@@ -14,4 +14,7 @@ sudo apt-get install unity-tweak-tool
 echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo set Icons to : Numix-Circle, Themes to : Yosembiance-atomic-blue
 unity-tweak-tool
-
+if [-d "~/.fonts"]; then
+mkdir ~/.fonts
+fi
+cp ./fonts/FuraMono-* ~/.fonts/
