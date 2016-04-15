@@ -19,3 +19,11 @@ mkdir ~/.fonts
 fi
 cp ./fonts/FuraMono-* ~/.fonts/
 fc-cache -f -v
+#go and change your terminal colors and font
+#install zsh
+sudo apt-get install zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+chsh -s /usr/bin/zsh
+
+sudo reboot
+
