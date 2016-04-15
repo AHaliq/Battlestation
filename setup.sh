@@ -18,3 +18,4 @@ if [-d "~/.fonts"]; then
 mkdir ~/.fonts
 fi
 cp ./fonts/FuraMono-* ~/.fonts/
+fc-cache -f -v
