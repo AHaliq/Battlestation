@@ -10,7 +10,7 @@ fc-cache -f -v
 
 
 sh ./scripts/apps.sh
-
+sh ./scripts/vimsetup.sh
 
 #install powerline
 sudo apt-get install python-pip
