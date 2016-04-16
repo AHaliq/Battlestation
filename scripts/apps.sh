@@ -7,6 +7,10 @@ echo ===================
 sudo apt-get install git
 
 
+#install various utils
+sudo apt-get install htop speedometer tree
+
+
 #install powerline
 sudo apt-get install python-pip
 pip install --user powerline-status
