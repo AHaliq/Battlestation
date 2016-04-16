@@ -84,4 +84,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Powerline Configuration
-. /home/ahaliq/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+. ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh

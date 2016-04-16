@@ -7,6 +7,12 @@ echo ===================
 sudo apt-get install git
 
 
+#install powerline
+sudo apt-get install python-pip
+pip install --user powerline-status
+pip install --user git+git://github.com/powerline/powerline
+
+
 #install zsh
 sudo apt-get install zsh
 wget https://github.com/robbyrussel/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
