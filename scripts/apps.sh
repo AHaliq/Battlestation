@@ -8,7 +8,7 @@ sudo apt-get install git
 
 
 #install various utils
-sudo apt-get install htop speedometer tree 
+sudo apt-get install htop speedometer tree screenfetch
 
 
 #install powerline
