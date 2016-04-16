@@ -1,16 +1,17 @@
 sh ./scripts/gtktheme.sh
+
+
 if [-d "~/.fonts"]; then
 mkdir ~/.fonts
 fi
 cp ./fonts/FuraMono-* ~/.fonts/
 fc-cache -f -v
 #go and change your terminal colors and font
-#install zsh
-sudo apt-get install zsh
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-chsh -s /usr/bin/zsh
-#install tmux
-sudo apt-get install tmux
+
+
+sh ./scripts/apps.sh
+
+
 #install powerline
 sudo apt-get install python-pip
 pip install --user powerline-status
