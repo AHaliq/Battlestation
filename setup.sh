@@ -1,19 +1,4 @@
-#install git
-sudo apt-get install git
-#install numix icon theme
-sudo add-apt-repository ppa:numix/ppa
-sudo apt-get update
-sudo apt-get install numix-icon-theme-circle
-#clone yosembiance theme
-if [-d "~/.themes"]; then
-mkdir ~/.themes
-fi
-git clone https://github.com/bsundman/Yosembiance.git ~/.themes
-#unity-tweak-tool > appearance > icons > Numix-circle
-sudo apt-get install unity-tweak-tool
-echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-echo set Icons to : Numix-Circle, Themes to : Yosembiance-atomic-blue
-unity-tweak-tool
+sh ./scripts/gtktheme.sh
 if [-d "~/.fonts"]; then
 mkdir ~/.fonts
 fi
@@ -32,7 +17,7 @@ pip install --user powerline-status
 pip install --user git+git://github.com/powerline/powerline
 # zsh powerline
 echo "# Powerline Configuration" >> ~/.zshrc
-echo ". ~/.loacl/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh" >> ~/.zshrc
+echo ". ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh" >> ~/.zshrc
 # vim powerline
 echo '" Powerline configuration' | sudo tee --append /etc/vim/vimrc
 echo "python from powerline.vim import setup as powerline_setup" | sudo tee --append /etc/vim/vimrc
@@ -40,7 +25,9 @@ echo "python powerline_setup()" | sudo tee --append /etc/vim/vimrc
 echo "pythong del powerline_setup" | sudo tee --append /etc/vim/vimrc
 echo "set laststatus=2" | sudo tee --append /etc/vim/vimrc
 echo "set t_Co=256" | sudo tee --append /etc/vim/vimrc
-
+# tmux powerline
+tmux show -g | cat > ~/.tmux.conf
+echo "source ~/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf" >> ~/.tmux.conf
 
 sudo reboot
 
