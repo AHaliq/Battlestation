@@ -21,5 +21,15 @@ git clone https://github.com/scrooloose/nerdtree.git
 #install nerdtree-tabs (persistent tree in vim tabs)
 git clone https://github.com/jistr/vim-nerdtree-tabs.git
 
+
 #install nerdtree-git (git indicators)
 git clone https://github.com/Xuyuanp/nerdtree-git-plugin.git 
+
+
+#install color scheme
+cd ~/.vim
+git clone https://github.com/joshdick/onedark.vim.git
+cd onedark.vim
+mv -r colors ./
+cd ~/.vim
+sudo rm -rf onedark.vim
