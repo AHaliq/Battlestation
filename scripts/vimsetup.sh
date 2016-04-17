@@ -24,6 +24,10 @@ git clone https://github.com/Xuyuanp/nerdtree-git-plugin.git
 git clone https://github.com/airblade/vim-gitgutter.git
 #install autopairs
 git clone https://github.com/jiangmiao/auto-pairs.git
+#install surround (wrap text)
+git clone https://github.com/tpope/vim-surround.git
+#install emmet (html shorthand)
+git clone https://github.com/mattn/emmet-vim.git
 
 
 #install color scheme
