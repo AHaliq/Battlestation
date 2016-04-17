@@ -34,3 +34,5 @@ chsh -s /usr/bin/zsh
 #install tmux
 sudo apt-get install tmux
 cp ./configfiles/.tmux.conf ~/
+
+echo left to cleanup launcher icons and system monitor tray
