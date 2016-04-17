@@ -8,14 +8,14 @@ sudo apt-get install vim
 cp ./configfiles/.vimrc ~/
 
 
-#install pathogen
+#install pathogen (plugin manager)
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-
-#install nerdtree
 cd ~/.vim/bundle
+#install nerdtree (project directory tree viewer)
 git clone https://github.com/scrooloose/nerdtree.git
 
 
-
+#install nerdtree-tabs (persistent tree in vim tabs)
+git clone https://github.com/jistr/vim-nerdtree-tabs.git
