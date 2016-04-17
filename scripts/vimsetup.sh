@@ -12,6 +12,7 @@ cp ./configfiles/.vimrc ~/
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+
 cd ~/.vim/bundle
 #install nerdtree (project directory tree viewer)
 git clone https://github.com/scrooloose/nerdtree.git
