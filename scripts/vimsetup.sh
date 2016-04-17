@@ -16,20 +16,20 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/.vim/bundle
 #install nerdtree (project directory tree viewer)
 git clone https://github.com/scrooloose/nerdtree.git
-
-
 #install nerdtree-tabs (persistent tree in vim tabs)
 git clone https://github.com/jistr/vim-nerdtree-tabs.git
-
-
 #install nerdtree-git (git indicators)
 git clone https://github.com/Xuyuanp/nerdtree-git-plugin.git 
+#install git gutter
+git clone https://github.com/airblade/vim-gitgutter.git
+#install autopairs
+git clone https://github.com/jiangmiao/auto-pairs.git
 
 
 #install color scheme
 cd ~/.vim
 git clone https://github.com/joshdick/onedark.vim.git
 cd onedark.vim
-mv -r colors ./
+mv colors ./
 cd ~/.vim
 sudo rm -rf onedark.vim
