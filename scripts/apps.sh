@@ -27,12 +27,12 @@ pip install --user git+git://github.com/powerline/powerline
 #install zsh
 sudo apt-get install zsh
 wget https://github.com/robbyrussel/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-cp ./configfiles/.zshrc ~/
+cp ./configfiles/zshrc ~/.zshrc
 chsh -s /usr/bin/zsh
 
 
 #install tmux
 sudo apt-get install tmux
-cp ./configfiles/.tmux.conf ~/
+cp ./configfiles/tmux.conf ~/.tmux-conf
 
 echo left to cleanup launcher icons and system monitor tray
