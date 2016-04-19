@@ -28,6 +28,8 @@ git clone https://github.com/jiangmiao/auto-pairs.git
 git clone https://github.com/tpope/vim-surround.git
 #install emmet (html shorthand)
 git clone https://github.com/mattn/emmet-vim.git
+#install commentary (comment out util)
+git clone https://github.com/tpope/vim-commentary.git
 
 
 #install color scheme
