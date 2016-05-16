@@ -36,3 +36,7 @@ sudo apt-get install tmux
 cp ./configfiles/tmux.conf ~/.tmux-conf
 
 echo left to cleanup launcher icons and system monitor tray
+
+#install nodejs
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
