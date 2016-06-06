@@ -1,11 +1,11 @@
-echo ==================
-echo = SETTING UP VIM =
-echo ==================
+echo '=================='
+echo '= SETTING UP VIM ='
+echo '=================='
 
 
 #install vim base
 sudo apt-get install vim
-cp ./configfiles/.vimrc ~/
+cp ./configfiles/vimrc ~/.vimrc
 
 
 #install pathogen (plugin manager)
@@ -30,6 +30,8 @@ git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/mattn/emmet-vim.git
 #install commentary (comment out util)
 git clone https://github.com/tpope/vim-commentary.git
+#install syntastic (run checkers)
+git clone https://github.com/scrooloose/syntastic.git
 
 
 #install color scheme

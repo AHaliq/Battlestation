@@ -1,6 +1,6 @@
-echo ===================
-echo = SETTING UP APPS =
-echo ===================
+echo '==================='
+echo '= SETTING UP APPS ='
+echo '==================='
 
 
 #install git
@@ -40,3 +40,14 @@ echo left to cleanup launcher icons and system monitor tray
 #install nodejs
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
+sudo npm install npm -g
+
+# install global packages
+sudo npm install -g grunt jshint jsonlint
+cp ./configfiles/jshintrc ~/.jshintrc
+
+#install ruby
+sudo apt-get install ruby-full
+
+#install heroku
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
