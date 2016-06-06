@@ -32,7 +32,13 @@ git clone https://github.com/mattn/emmet-vim.git
 git clone https://github.com/tpope/vim-commentary.git
 #install syntastic (run checkers)
 git clone https://github.com/scrooloose/syntastic.git
-
+#install youcompleteme (omnicomplete)
+git clone https://github.com/valloric/youcompleteme
+sudo apt-get install build-essential cmake
+cd youcompleteme
+git submodule update --init --recursive
+./install.py --all
+cd ../
 
 #install color scheme
 cd ~/.vim
