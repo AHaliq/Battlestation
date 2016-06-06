@@ -35,6 +35,7 @@ git clone https://github.com/scrooloose/syntastic.git
 #install youcompleteme (omnicomplete)
 git clone https://github.com/valloric/youcompleteme
 sudo apt-get install build-essential cmake
+sudo apt-get install python-dev python3-dev
 cd youcompleteme
 git submodule update --init --recursive
 ./install.py --all
