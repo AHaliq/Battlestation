@@ -42,8 +42,8 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install npm -g
 
-# install global packages
-sudo npm install -g grunt jshint jsonlint
+# install syntax checkers for syntastic plugin vim
+sudo npm install -g grunt jshint jsonlint pug-lint stylint
 cp ./configfiles/jshintrc ~/.jshintrc
 
 #install ruby
