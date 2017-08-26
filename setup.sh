@@ -1,16 +1,6 @@
-sh ./scripts/gtktheme.sh
+# homebrew package manager
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# TODO- setup main programs
 
-if [-d "~/.fonts"]; then
-mkdir ~/.fonts
-fi
-cp ./fonts/FuraMono-* ~/.fonts/
-fc-cache -f -v
-#go and change your terminal colors and font
-
-
-sh ./scripts/apps.sh
 sh ./scripts/vimsetup.sh
-
-sudo reboot
-
