@@ -20,14 +20,12 @@ echo "${CBLU} !BATTLESTATION! ${C}"
 if [[ $UNME == 'Darwin' ]]; then
     UNME='osx'
 else
-    echo "${TERR} unexpected os ${CHI}${UNME}${C}"
+    echo "${TERR}unexpected os ${CHI}${UNME}${C}"
     exit 1
 fi
 # determine os
 
-cd "$TDIR/src/os/$UNME"
-pwd
-source "./install.sh"
+source "$TDIR/src/os/$UNME/install.sh"
 # run os specific installation
 
 cd $TDIR
