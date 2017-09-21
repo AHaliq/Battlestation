@@ -25,5 +25,5 @@ else
 fi
 # check valid download
 
-//TODO: detect 
+# TODO: detect 
 # install
