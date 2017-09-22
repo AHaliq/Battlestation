@@ -32,6 +32,14 @@ function ifdontexist()
 {
   command -v $1 >/dev/null 2>&1 || { eval $2 >&2; }
 }
+function addpath ()
+{
+  echo $1
+  # TODO
+  # if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+  #   PATH="${PATH:+"$PATH:"}$1"
+  # fi
+}
 # $ url, path file out
 function download()
 { 

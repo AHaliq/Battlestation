@@ -26,6 +26,7 @@ function osxinstallport () {
     exit 1
   fi
   download "$POSXPORT$FOSXMP" "./$FOSXMP"
-# installpkg "./$FOSXMP" << TODO
+  installpkg "./$FOSXMP"
+  addpath "/opt/local/bin"
 }
 ifdontexist port osxinstallport
