@@ -4,8 +4,9 @@ OSXVER=$(sw_vers -productVersion)
 OSXPORT=""
 # VARS ==========================================
 
-COSX=" ${CBLU} OSX ${C}"
-COSXB=" ${CBLU}     ${C}"
+TOSXG=" OSX "
+COSX=" ${CBLU}${TOSXG}${C}"
+COSXB=" ${CBLU}$(blanks "${TOSXG}")${C}"
 # TEXT ==========================================
 
 echo "${COSX}version ${CHI}${OSXVER}${C}"
@@ -22,18 +23,9 @@ else
     echo "${TERR}unexpected osx version"
     exit 1
 fi
-cd "${TDIR}/bin"
-curl -sL $OSXPORT -o ./MacPorts-2.4.1.pkg -D ./out
+download "$OSXPORT" "./MacPorts-2.4.1.pkg" "${COSXB}" "MacPorts from ${CHI}${OSXPORT}${C}"
 # download pkg from https://github.com/macports/macports-base/releases/
 
-if grep -q "200 OK" "./out"; then
-    echo "${COSXB}download success; begin installation"
-else
-    echo "${TERR}problem downloading MacPorts from ${CHI}${OSXPORT}${C}"
-    exit 2
-fi
-# check valid download
-
-# sudo installer -pkg /path/to/package.pkg -target /
+# sudo installer -pkg /path/to/package.pkg -target / <<<<< TODO UNCOMMENT
 echo "${COSXB}installed macports successfully"
 # install macports

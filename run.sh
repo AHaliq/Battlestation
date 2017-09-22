@@ -15,15 +15,32 @@ C='\033[0m'
 TERR=" ${CERR} ERROR ${C}"
 # TEXT ==========================================
 
-function clearbin()
+function usebin()
 {
     rm -rf "${TDIR}/bin/"
     mkdir "${TDIR}/bin"
+    cd "${TDIR}/bin"
+}
+function blanks()
+{
+  for (( c=1; c<=${#1}; c++ )); do
+    printf ' '
+  done
+}
+function download()
+{ 
+  usebin
+  curl -sL $1 -o $2 -D ./out
+  if grep -q "200 OK" "./out"; then
+    echo "$3download success"
+  else
+    echo "${TERR}downloading: $4"
+    exit 2
+  fi
 }
 # FUNCTIONS =====================================
 
 echo "${CBLU} !BATTLESTATION! ${C}begin setup"
-clearbin
 # greet
 
 if [[ $UNME == 'Darwin' ]]; then
@@ -34,21 +51,16 @@ else
 fi
 # determine os
 
-source "$TDIR/src/os/$UNME/install.sh"
+cd "${TDIR}/src/os/${UNME}"
+# source "./install.sh" #<<<< TODO UNCOMMENT
 # run os specific installation
 
-cd $TDIR
-# go to target directory
-
+for D in $(find "${TDIR}/src/app" -d 1 -type d); do
+  cd $D
+  source "./install.sh"
+done
 # loop src/app dirs, go in, call install
-#ln -sf "$BASEDIR/.vimrc" ~/.vimrcA
 
 echo "${CGRE} successfull setup ${C}"
-clearbin
 cd $SDIR
 # return to source directory
-
-# determine $PATH
-# if [[ ":$PATH:" == *":$HOME/bin:"* ]]; then
-
-
