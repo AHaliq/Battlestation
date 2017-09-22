@@ -11,6 +11,7 @@ TERR=" $CERR ERROR $C"
 TCB=" $CBLU $C"
 TCG=" $CGRE $C"
 # TEXT ==========================================
+
 function usebin()
 {
     rm -rf "$TDIR/bin/"

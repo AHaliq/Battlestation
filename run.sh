@@ -4,10 +4,10 @@ UNME=$(uname)
 SDIR=$(pwd)
 TDIR=$(cd $(dirname "$0") && pwd -P)
 # VARS ==========================================
-source "${TDIR}/src/header.sh"
 
+source "${TDIR}/src/header.sh"
 echo "${CBLU} !BATTLESTATION! ${C}begin setup"
-# greet
+# start
 
 if [[ $UNME == 'Darwin' ]]; then
     UNME='osx'
