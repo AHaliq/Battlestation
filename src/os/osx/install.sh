@@ -4,6 +4,7 @@ OSXVER=$(sw_vers -productVersion)
 # VARS ==========================================
 
 POSXCLT="/Library/Developer/CommandLineTools"
+# from https://github.com/macports/macports-base/releases/
 POSXPORT="https://github.com/macports/macports-base/releases/download/v2.4.1/"	
 FOSXMP=""
 # PATHS =========================================
@@ -16,7 +17,6 @@ function osxinstallctl () {
   xcode-select --install > /dev/null
 }
 ifdontexist git osxinstallctl
-# install xcode
 
 function osxinstallport () {
   if [[ $OSXVER == "10.11"* ]]; then
@@ -29,4 +29,3 @@ function osxinstallport () {
 # installpkg "./$FOSXMP" << TODO
 }
 ifdontexist port osxinstallport
-# install macports pkg from https://github.com/macports/macports-base/releases/

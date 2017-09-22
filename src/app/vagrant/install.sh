@@ -9,10 +9,14 @@ echo "${CTI} vagrant $C"
 #greet
 
 if [[ $UNME == 'osx' ]]; then
-  download "$PVAGVB" "$FVAGPK"
-  mountdmg "./$FVAGPK"
-  # installpkg '/Volumes/VirtualBox.pkg' << TODO
-  unmountdmg $PVAGVBVOL
+  function vagrantosxinstallvb ()
+  {
+    download "$PVAGVB" "$FVAGPK"
+    mountdmg "./$FVAGPK"
+    # installpkg '/Volumes/VirtualBox.pkg' << TODO
+    unmountdmg $PVAGVBVOL
+  }
+  ifdontexist VBoxManage vagrantosxinstallvb
 
   # download vagrant
 fi
