@@ -1,40 +1,40 @@
 #!/bin/bash
 
-CERR='\033[1;37;41m'
-CBLU='\033[1;34;47m'
-CGRE='\033[1;30;42m'
-CHI='\033[1;34m'
+CHI='\033[4m'
+CTI='\033[0;37;40m'
 C='\033[0m'
 # ANSI COL ======================================
 
-TERR=" $CERR ERROR $C"
-TCB=" $CBLU $C"
-TCG=" $CGRE $C"
+TERR="\033[0;37;41m ERROR $C "
+TCB=" $CTI $C "
+TCQ=" \033[0;0;43m $C "
+TCD=" \033[0;0;44m $C "
+TCG=" \033[0;30;42m $C "
 # TEXT ==========================================
 
+function query()
+{
+  printf "${TCQ}$1 "
+  read -p "[Y/n]: " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    eval $2
+  fi
+}
 function usebin()
 {
     rm -rf "$TDIR/bin/"
     mkdir "$TDIR/bin"
     cd "$TDIR/bin"
 }
-# $ text
-function blanks()
-{
-  for (( c=1; c<=${#1}; c++ )); do
-    printf ' '
-  done
-}
-# $ url, path file out, postfix fail msg
+# $ url, path file out
 function download()
 { 
   usebin
-  echo "${TCG}downloading: \033[4m$2$C"
+  echo "${TCD}download: ${CHI}$2$C"
   curl -sL $1 -o $2 -D ./out
-  if grep -q "200 OK" "./out"; then
-    echo "${TCG}successful"
-  else
-    echo "${TERR}failed url: \033[4m$1$C"
+  if ! grep -q "200 OK" "./out"; then
+    echo "${TERR}download: ${CHI}$1$C"
     exit 2
   fi
 }
@@ -48,11 +48,17 @@ function installpkg()
 # $ path to file
 function mountdmg()
 {
-  sudo hdiutil attach $1
+  echo "${TCB}mount: ${CHI}$1$C"
+  if [[ $UNME == 'osx' ]]; then
+    sudo hdiutil attach $1 > /dev/null
+  fi
 }
-# $ filename
+# $ volume directory
 function unmountdmg()
 {
-  sudo hdiutil detach "/Volumes/${1%'.dmg'}"
+  echo "${TCB}unmount: ${CHI}$1$C"
+  if [[ $UNME == 'osx' ]]; then
+    sudo hdiutil detach "/Volumes/$1" > /dev/null
+  fi
 }
 # FUNCTIONS =====================================

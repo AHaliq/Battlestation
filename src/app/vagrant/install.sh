@@ -1,19 +1,18 @@
 #!/bin/bash
 
 PVAGVB="http://download.virtualbox.org/virtualbox/5.1.28/VirtualBox-5.1.28-117968-OSX.dmg"
+PVAGVBVOL="VirtualBox"
 FVAGPK="VirtualBox-5.1.28-117968-OSX.dmg"
 # PATHS =========================================
 
-TVAGG=" VAGRANT "
-TVAG=" ${CBLU}${TVAGG}${C}"
-# TEXT ==========================================
+echo "${CTI} vagrant $C"
+#greet
 
 if [[ $UNME == 'osx' ]]; then
-  echo "${TVAG}for OSX"
-  echo "${TCB}downloading virtualbox"
   download "$PVAGVB" "$FVAGPK"
-  # mountdmg "./$FVAGPK" << TODO
-  # installpkg '/Volumes/VirtualBox.pkg'
-  # unmountdmg $FVAGPK
-  echo "${TCB}downloading vagrant"
+  mountdmg "./$FVAGPK"
+  # installpkg '/Volumes/VirtualBox.pkg' << TODO
+  unmountdmg $PVAGVBVOL
+
+  # download vagrant
 fi

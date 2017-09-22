@@ -5,8 +5,10 @@ SDIR=$(pwd)
 TDIR=$(cd $(dirname "$0") && pwd -P)
 # VARS ==========================================
 
+# ROUTINES ======================================
+
 source "${TDIR}/src/header.sh"
-echo "${CBLU} !BATTLESTATION! ${C}begin setup"
+echo "${CTI} !BATTLESTATION! $C"
 # start
 
 if [[ $UNME == 'Darwin' ]]; then
@@ -21,12 +23,13 @@ cd "${TDIR}/src/os/${UNME}"
 source "./install.sh" 
 # run os specific installation
 
+installapp () { source "./install.sh"; }
 for D in $(find "${TDIR}/src/app" -d 1 -type d); do
   cd $D
-  source "./install.sh"
+  query "${D##*/}" installapp
 done
 # loop src/app dirs, go in, call install
 
-echo "${CGRE} successfull setup ${C}"
+echo "${CTI} success $C"
 cd $SDIR
 # return to source directory
