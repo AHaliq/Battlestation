@@ -6,8 +6,8 @@ TDIR=$(cd $(dirname "$0") && pwd -P)
 # VARS ==========================================
 
 CERR='\033[1;37;41m'
-CBLU='\033[1;37;44m'
-CGRE='\033[1;37;42m'
+CBLU='\033[1;34;47m'
+CGRE='\033[1;30;42m'
 CHI='\033[1;34m'
 C='\033[0m'
 # ANSI COL ======================================
@@ -43,7 +43,7 @@ cd $TDIR
 # loop src/app dirs, go in, call install
 #ln -sf "$BASEDIR/.vimrc" ~/.vimrcA
 
-echo "${CGRE} !BATTLESTATION! ${C}completed"
+echo "${CGRE} successfull setup ${C}"
 clearbin
 cd $SDIR
 # return to source directory
