@@ -11,18 +11,22 @@ FOSXMP=""
 echo "$CTI osx $C version ${CHI}${OSXVER}${C}"
 # greet
 
-echo "${TCB}install xcode"
-if [[ ! -d $POSXCLT ]]; then
+function osxinstallctl () {
+  echo "${TCB}install xcode"
   xcode-select --install > /dev/null
-fi
+}
+ifdontexist git osxinstallctl
 # install xcode
 
-if [[ $OSXVER == "10.11"* ]]; then
-  FOSXMP="MacPorts-2.4.1-10.11-ElCapitan.pkg"
-else
-  echo "${TERR}unexpected osx version"
-  exit 1
-fi
-download "$POSXPORT$FOSXMP" "./$FOSXMP"
+function osxinstallport () {
+  if [[ $OSXVER == "10.11"* ]]; then
+    FOSXMP="MacPorts-2.4.1-10.11-ElCapitan.pkg"
+  else
+    echo "${TERR}unexpected osx version"
+    exit 1
+  fi
+  download "$POSXPORT$FOSXMP" "./$FOSXMP"
 # installpkg "./$FOSXMP" << TODO
+}
+ifdontexist port osxinstallport
 # install macports pkg from https://github.com/macports/macports-base/releases/

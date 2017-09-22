@@ -27,6 +27,11 @@ function usebin()
     mkdir "$TDIR/bin"
     cd "$TDIR/bin"
 }
+# $ command, func if doesnt exist
+function ifdontexist()
+{
+  command -v $1 >/dev/null 2>&1 || { eval $2 >&2; }
+}
 # $ url, path file out
 function download()
 { 
