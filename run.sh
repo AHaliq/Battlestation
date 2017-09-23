@@ -5,8 +5,6 @@ SDIR=$(pwd)
 TDIR=$(cd $(dirname "$0") && pwd -P)
 # VARS ==========================================
 
-# ROUTINES ======================================
-
 source "${TDIR}/src/header.sh"
 echo "${CTI} !BATTLESTATION! $C"
 # start
