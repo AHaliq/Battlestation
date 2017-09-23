@@ -12,19 +12,25 @@ FOSXMP=""
 echo "$CTI osx $C version ${CHI}${OSXVER}${C}"
 # greet
 
-function osxinstallctl () {
+if [[ ! -d $POSXCLT ]]; then
   echo "${TCB}install xcode"
   xcode-select --install > /dev/null
-}
-ifdontexist git osxinstallctl
+fi
+# install xcode ctl
 
 function osxinstallport () {
-  if [[ $OSXVER == "10.11"* ]]; then
-    FOSXMP="MacPorts-2.4.1-10.11-ElCapitan.pkg"
-  else
-    echo "${TERR}unexpected osx version"
-    exit 1
-  fi
+  case $OSXVER in
+    '10.12.'*)
+      FOSXMP="MacPorts-2.4.1-10.12-Sierra.pkg"
+      ;;
+    '10.11.'*)
+      FOSXMP="MacPorts-2.4.1-10.11-ElCapitan.pkg"
+      ;;
+    *)
+      echo "${TERR}unexpected osx version"
+      exit 1
+      ;;
+  esac
   download "$POSXPORT$FOSXMP" "./$FOSXMP"
   installpkg "./$FOSXMP"
   addpath "/opt/local/bin"
