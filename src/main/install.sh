@@ -3,8 +3,10 @@
 echo "${CTI} !BATTLESTATION! $C"
 # start
 
-if [[ $UNME == 'Darwin' ]]; then
+if [[ " $UNME " == *' Darwin '* ]]; then
     UNME='osx'
+elif [[ " $UNME " == *' Ubuntu '* ]]; then
+    UNME='ubuntu'
 else
     echo "${TERR}unexpected os ${CHI}${UNME}${C}"
     exit 1

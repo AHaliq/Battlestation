@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UNME=$(uname)
+UNME=$(uname -v)
 SDIR=$(pwd)
 TDIR=$(cd $(dirname "$0") && pwd -P)
 DDIR="${TDIR}/bin"
