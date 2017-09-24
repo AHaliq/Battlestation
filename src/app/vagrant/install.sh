@@ -30,4 +30,6 @@ if [[ $UNME == 'osx' ]]; then
     unmountdmg "$PVAGVGVOL"
   fi
   # install vagrant
+elif [[ $UNME == 'ubu' ]]; then
+  echo "${TCB}not implemented"
 fi
