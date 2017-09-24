@@ -9,14 +9,12 @@ echo "${CTI} vagrant $C"
 #greet
 
 if [[ $UNME == 'osx' ]]; then
-  function vagrantosxinstallvb ()
-  {
+  if [[ ! -d '/Applications/VirtualBox.app' ]]; then
     download "$PVAGVB" "$FVAGPK"
     mountdmg "${DDIR}/$FVAGPK"
     installpkg "/Volumes/$PVAGVBVOL/VirtualBox.pkg"
     unmountdmg $PVAGVBVOL
-  }
-  ifdontexist VBoxManage vagrantosxinstallvb
+  fi
   # install virtualbox
 
   # install vagrant
