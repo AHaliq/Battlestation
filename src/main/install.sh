@@ -18,7 +18,7 @@ source "./install.sh"
 # run os specific installation
 
 installapp () { source "./install.sh"; }
-for D in $(find "${TDIR}/src/app" -d 1 -type d); do
+for D in "$(find "${TDIR}/src/app" -maxdepth 1 -mindepth 1 -type d)"; do
   cd $D
   query "${D##*/}" installapp
 done
