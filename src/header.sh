@@ -63,6 +63,7 @@ function addpath ()
 # $ url, path file out
 function download ()
 { 
+  DOWNLOADPREDIR=$(pwd)
   usebin
   echo "${TCD}download: ${CHI}$2$C"
   curl -sL $1 -o $2 -D ./out
@@ -70,6 +71,7 @@ function download ()
     echo "${TERR}download: ${CHI}$1$C"
     exit 2
   fi
+  cd $DOWNLOADPREDIR
 }
 # $ path to file
 function installpkg ()

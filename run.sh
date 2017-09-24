@@ -3,6 +3,7 @@
 UNME=$(uname)
 SDIR=$(pwd)
 TDIR=$(cd $(dirname "$0") && pwd -P)
+DDIR="${TDIR}/bin"
 # VARS ==========================================
 
 source "${TDIR}/src/header.sh"

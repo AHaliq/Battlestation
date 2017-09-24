@@ -12,8 +12,8 @@ if [[ $UNME == 'osx' ]]; then
   function vagrantosxinstallvb ()
   {
     download "$PVAGVB" "$FVAGPK"
-    mountdmg "./$FVAGPK"
-    installpkg '/Volumes/VirtualBox.pkg'
+    mountdmg "${DDIR}/$FVAGPK"
+    # installpkg '/Volumes/VirtualBox.pkg'
     unmountdmg $PVAGVBVOL
   }
   ifdontexist VBoxManage vagrantosxinstallvb

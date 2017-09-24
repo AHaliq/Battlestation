@@ -31,8 +31,8 @@ function osxinstallport () {
       exit 1
       ;;
   esac
-  download "$POSXPORT$FOSXMP" "./$FOSXMP"
-  installpkg "./$FOSXMP"
+  download "$POSXPORT$FOSXMP" "${DDIR}/$FOSXMP"
+  installpkg "${DDIR}/$FOSXMP"
   addpath "/opt/local/bin"
 }
 ifdontexist port osxinstallport
