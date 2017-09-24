@@ -5,5 +5,6 @@ UBU_VER="$(lsb_release -rs)"
 
 echo "$CTI UBUNTU $C version $CHI$UBU_VER$C"
 
-echo "${TCB} update apt-get"
+echo "${TCB}apt-get update"
 sudo apt-get -yqq update
+echo "${TCB}apt-get install ..."
