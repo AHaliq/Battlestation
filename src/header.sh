@@ -27,7 +27,7 @@ function query ()
 }
 function usebin ()
 {
-    rm -rf "$TDIR/bin/"
+    sudo rm -rf "$TDIR/bin/"
     mkdir "$TDIR/bin"
     cd "$TDIR/bin"
 }
