@@ -1,8 +1,5 @@
 #!/bin/bash
 
-rm -rf /Library/Developer/CommandLineTools
-# xcode CTL
-
 function osxuninstallport () {
   sudo rm -rf \
     /opt/local \
