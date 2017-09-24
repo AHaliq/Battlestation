@@ -23,9 +23,11 @@ if [[ $UNME == 'osx' ]]; then
   fi
   # install virtualbox
   
-  download "$PVAGVG$FVAGVGDMG" $FVAGVGDMG
-  mountdmg "${DDIR}/$FVAGVGDMG"
-  installpkg "/Volumes/$PVAGVGVOL/vagrant.pkg"
-  unmountdmg "$PVAGVGVOL"
+  if [[ ! -d '/opt/vagrant/' ]]; then
+    download "$PVAGVG$FVAGVGDMG" $FVAGVGDMG
+    mountdmg "${DDIR}/$FVAGVGDMG"
+    installpkg "/Volumes/$PVAGVGVOL/vagrant.pkg"
+    unmountdmg "$PVAGVGVOL"
+  fi
   # install vagrant
 fi
