@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CHI='\033[4m'
-CTI='\033[0;37;40m'
+CHI=$(tput smul)
+CTI="$(tput setab 0)$(tput setaf 7)"
 C='\033[0m'
 # ANSI COL ======================================
 
