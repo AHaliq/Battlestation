@@ -1,0 +1,28 @@
+0. keep color - till working on zsh see if its still shit
+
+4. start zsh
+
+THOUGHTS
+========
+
+vim install script:
+DETECT VIM7 uninstall
+  sudo rm -rf /usr/share/vim
+  sudo rm /usr/bin/vim
+  rm ~/.vimrc
+  rm ~/.vim
+  rm ~/.viminfo
+  install vim8 deps < OS specific
+  make vim 8
+
+make sub OSX installer entertainment package (twitch + spotify), gui devel (adobe + google backup)
+
+pkg removal guide
+# https://stackoverflow.com/questions/25925752/uninstall-packages-in-mac-os-x
+
+next up is proper shell customization, then vim, then continue C or more dev env stuff
+
+ANSI escape: http://ascii-table.com/ansi-escape-sequences.php
+
+# create symlink
+#ln -sf "$BASEDIR/.vimrc" ~/.vimrc
