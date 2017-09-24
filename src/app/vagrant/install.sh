@@ -13,10 +13,11 @@ if [[ $UNME == 'osx' ]]; then
   {
     download "$PVAGVB" "$FVAGPK"
     mountdmg "${DDIR}/$FVAGPK"
-    # installpkg '/Volumes/VirtualBox.pkg'
+    installpkg "/Volumes/$PVAGVBVOL/VirtualBox.pkg"
     unmountdmg $PVAGVBVOL
   }
   ifdontexist VBoxManage vagrantosxinstallvb
+  # install virtualbox
 
-  # download vagrant
+  # install vagrant
 fi

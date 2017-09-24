@@ -8,5 +8,7 @@ DDIR="${TDIR}/bin"
 
 source "${TDIR}/src/main/header.sh"
 source "${TDIR}/src/main/install.sh"
+
 #source "${TDIR}/src/os/osx/uninstall/uninstallctl.sh"
 #source "${TDIR}/src/os/osx/uninstall/uninstallmacports.sh"
+#source "${TDIR}/src/app/vagrant/uninstall/uninstallvbox.sh"
