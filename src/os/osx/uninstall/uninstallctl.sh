@@ -1,5 +1,5 @@
 #!/bin/bash
 
-rm -rf /Library/Developer/CommandLineTools
+sudo rm -rf /Library/Developer/CommandLineTools
 # xcode CTL
 
