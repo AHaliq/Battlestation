@@ -2,15 +2,15 @@
 
 CHI=$(tput smul)
 CTI="$(tput setab 0)$(tput setaf 7)"
-C='\033[0m'
+C="$(tput sgr0)"
 # ANSI COL ======================================
 
-TERR="\033[0;37;41m ERROR $C "
+TERR="$(tput setab 1)$(tput setaf 7) ERROR $C "
 TCB=" $CTI $C "
-TCP=" \033[0;0;46m $C "
-TCQ=" \033[0;0;43m $C "
-TCD=" \033[0;0;44m $C "
-TCG=" \033[0;30;42m $C "
+TCP=" $(tput setab 6) $C "
+TCQ=" $(tput setab 3) $C "
+TCD=" $(tput setab 4) $C "
+TCG=" $(tput setab 2) $C "
 # TEXT ==========================================
 
 FPRO=""
