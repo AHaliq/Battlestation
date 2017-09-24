@@ -7,6 +7,9 @@ POSXCLT="/Library/Developer/CommandLineTools"
 # from https://github.com/macports/macports-base/releases/
 POSXPORT="https://github.com/macports/macports-base/releases/download/v2.4.1/"	
 FOSXMP=""
+# from https://www.iterm2.com/downloads.html
+POSXTERM="https://iterm2.com/downloads/stable/"
+FOSXTERM="iTerm2-3_1_1.zip"
 # PATHS =========================================
 
 echo "$CTI osx $C version ${CHI}${OSXVER}${C}"
@@ -36,3 +39,11 @@ function osxinstallport () {
   addpath "/opt/local/bin"
 }
 ifdontexist port osxinstallport
+# install macports
+
+if [[ ! -d '/Applications/iTerm.app' ]]; then
+  download "$POSXTERM$FOSXTERM" "${DDIR}/$FOSXTERM"
+  unzip "${DDIR}/$FOSXTERM" -d "/Applications/" > /dev/null
+  # load preference to ${TDIR}/lib/scripts/?? but how
+fi
+#install macports

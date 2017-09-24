@@ -51,7 +51,7 @@ function addpath ()
     if [[ $UNME == 'osx'  ]]; then
       FPRO="$HOME/.bash_profile"
     fi
-    if [ ! -f $FPRO ]; then
+    if [[ ! -f $FPRO ]]; then
       printf 'export PATH=$PATH' > $FPRO
       echo "${TCB} created ${CHI}$FPRO$C"
     fi
@@ -64,8 +64,8 @@ function addpath ()
 function download ()
 { 
   DOWNLOADPREDIR=$(pwd)
-  usebin
   echo "${TCD}download: ${CHI}$2$C"
+  usebin
   curl -sL $1 -o $2 -D ./out
   if ! grep -q "200 OK" "./out"; then
     echo "${TERR}download: ${CHI}$1$C"
