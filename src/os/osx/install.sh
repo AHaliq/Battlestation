@@ -44,6 +44,6 @@ ifdontexist port osxinstallport
 if [[ ! -d '/Applications/iTerm.app' ]]; then
   download "$POSXTERM$FOSXTERM" "${DDIR}/$FOSXTERM"
   unzip "${DDIR}/$FOSXTERM" -d "/Applications/" > /dev/null
-  # load preference to ${TDIR}/lib/scripts/?? but how
+  echo "${TCB}set iTerm2 > Preferences > Load pref.. to [${TDIR}/lib/scripts/]"
 fi
-#install macports
+#install iterm
