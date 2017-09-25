@@ -11,5 +11,6 @@ source "${TDIR}/src/main/install.sh"
 
 #source "${TDIR}/src/os/osx/uninstall/uninstallctl.sh"
 #source "${TDIR}/src/os/osx/uninstall/uninstallmacports.sh"
+#source "${TDIR}/src/os/osx/uninstall/uninstallbrew.sh"
 #source "${TDIR}/src/app/vagrant/uninstall/uninstallvbox.sh"
 #source "${TDIR}/src/app/vagrant/uninstall/uninstallvagrant.sh"

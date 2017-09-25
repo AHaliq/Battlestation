@@ -21,25 +21,13 @@ if [[ ! -d $POSXCLT ]]; then
 fi
 # install xcode ctl
 
-function osxinstallport () {
-  case $OSXVER in
-    '10.12.'*)
-      FOSXMP="MacPorts-2.4.1-10.12-Sierra.pkg"
-      ;;
-    '10.11.'*)
-      FOSXMP="MacPorts-2.4.1-10.11-ElCapitan.pkg"
-      ;;
-    *)
-      echo "${TERR}unexpected osx version"
-      exit 1
-      ;;
-  esac
-  download "$POSXPORT$FOSXMP" "${DDIR}/$FOSXMP"
-  installpkg "${DDIR}/$FOSXMP"
-  addpath "/opt/local/bin"
+function osxinstallbrew () {
+  echo "${TCB}install homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
+  # from https://brew.sh
 }
-ifdontexist port osxinstallport
-# install macports
+ifdontexist brew osxinstallbrew
+# install homebrew
 
 if [[ ! -d '/Applications/iTerm.app' ]]; then
   download "$POSXTERM$FOSXTERM" "${DDIR}/$FOSXTERM"
