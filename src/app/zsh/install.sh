@@ -3,11 +3,14 @@
 echo "${CTI} z shell $C"
 
 if [[ $UNME == 'osx' ]]; then
-  brew install zsh
-  sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
+  if [[ ! -f /bin/zsh ]]; then
+    echo "${TCB}brew install zsh"
+    brew install zsh
+  fi
 elif [[ $UNME == 'ubu' ]]; then
-  sudo apt-get -yqq update
-  sudo apt-get -yqq upgrade
+  echo "${TCB}sudo apt-get install zsh"
   sudo apt-get -yqq install zsh
-  #/etc/passwd change username's shell to zsh
 fi
+
+echo "${TCB}set ${CHI}zsh$C as default shell"
+chsh -s $(which zsh) $USER

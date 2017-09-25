@@ -7,4 +7,5 @@ echo "$CTI UBUNTU $C version $CHI$UBU_VER$C"
 
 echo "${TCB}apt-get update"
 sudo apt-get -yqq update
-echo "${TCB}apt-get install ..."
+sudo apt-get -yqq upgrade
+#echo "${TCB}apt-get install ..."
