@@ -23,7 +23,8 @@ fi
 
 function osxinstallbrew () {
   echo "${TCB}install homebrew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew doctor
   # from https://brew.sh
 }
 ifdontexist brew osxinstallbrew
