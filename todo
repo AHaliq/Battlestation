@@ -1,10 +1,7 @@
-0. keep color - till working on zsh see if its still shit
+0. learn zsh, if docs still down do tmux
 
-https://gist.github.com/derhuerst/12a1558a4b408b3b2b6e
+1. choose zsh, tmux, vim
 
-4. start zsh in ubuntu
-
-5. do zsh for osx
 
 THOUGHTS
 ========
@@ -18,6 +15,8 @@ DETECT VIM7 uninstall
   rm ~/.viminfo
   install vim8 deps < OS specific
   make vim 8
+
+directory structure setup??
 
 make sub OSX installer entertainment package (twitch + spotify), gui devel (adobe + google backup)
 
