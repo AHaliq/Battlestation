@@ -8,6 +8,8 @@ echo "${CTI} vim8 $C"
 #/usr/bin/vim
 
 #detect vim8
+function installvim () {
+
 case $UNME in
 "osx")
 	;;
@@ -18,4 +20,26 @@ case $UNME in
 esac
 # install dependencies
 
-#install make
+usebin
+git clone https://github.com/vim/vim.git
+cd vim
+./configure \
+ --with-features=huge \
+ --enable-multibyte \
+ --enable-rubyinterp=yes \
+ --enable-pythoninterp=yes \
+ --with-python-config-dir=/usr/lib/python2.7/config \
+ --enable-python3interp=yes \
+ --with-python3-config-dir=/usr/lib/python3.2/config \
+ --enable-perlinterp=yes \
+ --enable-luainterp=yes \
+ --enable-cscope \
+ --prefix=/usr/local
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
+sudo make install
+# make
+# update path /usr/local/bin/vim
+# install plugin manager
+# install scripts
+}
+
