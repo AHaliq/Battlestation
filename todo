@@ -1,10 +1,33 @@
-0. learn zsh, if docs still down do tmux
-
-1. choose zsh, tmux, vim
-
+1. setup vim
+  # download latest dependencies
+  # make using latest version deps
+2. setup tmux
+3. setup markdown hotreload
+4. learn zsh
+5. setup zsh
 
 THOUGHTS
 ========
+
+SOFTWARE TO INVESTIGATE
+  primitive linux commands: sed, grep, 
+  kernel
+  vim
+  zsh
+  c lang
+  opengl
+PROJECTS TO CONTEMPLATE
+  functional graphs
+  revisit nonograms
+  HSL color generation
+  rubiks properties
+  diatonic music generator / improv chord trainer
+  functional filesystems / turtle
+  n dimensional minesweeper
+  math libraries
+  algorithm libraries
+  statistical libraries (finally make use of that book)
+  bifurcation
 
 vim install script:
 DETECT VIM7 uninstall
