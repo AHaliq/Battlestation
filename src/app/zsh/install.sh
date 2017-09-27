@@ -13,4 +13,4 @@ elif [[ $UNME == 'ubu' ]]; then
 fi
 
 echo "${TCB}set ${CHI}zsh$C as default shell"
-chsh -s $(which zsh) $USER
+sudo chsh -s $(which zsh) $USER
