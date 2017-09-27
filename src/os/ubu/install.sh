@@ -8,4 +8,5 @@ echo "$CTI UBUNTU $C version $CHI$UBU_VER$C"
 echo "${TCB}apt-get update"
 sudo apt-get -yqq update
 sudo apt-get -yqq upgrade
-#echo "${TCB}apt-get install ..."
+echo "${TCB}installing ${CHI}git, curl, make$C"
+sudo apt-get -yqq install git curl make

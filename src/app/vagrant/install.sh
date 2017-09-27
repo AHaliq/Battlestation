@@ -14,7 +14,8 @@ FVAGVGDMG="vagrant_2.0.0_x86_64.dmg"
 echo "${CTI} vagrant $C"
 #greet
 
-if [[ $UNME == 'osx' ]]; then
+case $UNME in
+'osx')
   if [[ ! -d '/Applications/VirtualBox.app' ]]; then
     download "$PVAGVB" "$FVAGPK"
     mountdmg "${DDIR}/$FVAGPK"
@@ -30,6 +31,8 @@ if [[ $UNME == 'osx' ]]; then
     unmountdmg "$PVAGVGVOL"
   fi
   # install vagrant
-elif [[ $UNME == 'ubu' ]]; then
+  ;;
+'ubu')
   echo "${TCB}not implemented"
-fi
+  ;;
+esac

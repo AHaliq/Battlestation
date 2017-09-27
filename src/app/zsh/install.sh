@@ -2,15 +2,18 @@
 
 echo "${CTI} z shell $C"
 
-if [[ $UNME == 'osx' ]]; then
+case $UNME in
+'osx')
   if [[ ! -f /bin/zsh ]]; then
     echo "${TCB}brew install zsh"
     brew install zsh
   fi
-elif [[ $UNME == 'ubu' ]]; then
+  ;;
+'ubu')
   echo "${TCB}sudo apt-get install zsh"
   sudo apt-get -yqq install zsh
-fi
+  ;;
+esac
 
 echo "${TCB}set ${CHI}zsh$C as default shell"
 sudo chsh -s $(which zsh) $USER
