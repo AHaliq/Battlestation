@@ -1,6 +1,8 @@
 1. setup vim
   # download latest dependencies
   # make using latest version deps
+  # check vimrc
+  # uninstall vim
 2. setup tmux
 3. setup markdown hotreload
 4. learn zsh
