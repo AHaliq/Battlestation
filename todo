@@ -7,6 +7,7 @@
     # check profile file exist else create
     # check file contains source lib script
     # if no add line to source
+OR profile file symlink
 1. setup vim
   # download latest dependencies
   # make using latest version deps
