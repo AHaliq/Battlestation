@@ -8,6 +8,10 @@ echo "${CTI} vim8 $C"
 #/usr/bin/vim
 
 #detect vim8
+if [[ ! -d '/usr/local/bin/vim' ]]; then
+  installvim
+fi
+
 function installvim () {
 
 case $UNME in
@@ -37,9 +41,11 @@ cd vim
  --prefix=/usr/local
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
 sudo make install
-# make
-# update path /usr/local/bin/vim
+# make; ensure path /usr/local/bin/vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # install plugin manager
+#   copy from config file git to lib, make symlink (assume no ~/.vimrc)
 # install scripts
 }
 
